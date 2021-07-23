@@ -482,12 +482,12 @@ button,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
   min-height: calc(100 * var(--vh, 1vh));
   overflow-x: hidden; }
   .wrapper--no-scrollbar {
     height: 100vh;
-    height: calc(100 * var(--vh, 1vh));
+    min-height: calc(100 * var(--vh, 1vh));
     -ms-overflow-style: none;
     scrollbar-width: none; }
     .wrapper--no-scrollbar::-webkit-scrollbar {
