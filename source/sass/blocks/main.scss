@@ -22,20 +22,6 @@
     animation-name: logoLoad;
   }
 
-  @keyframes logoLoad {
-    0% {
-      transform: scale(0.5);
-    }
-
-    50% {
-      transform: scale(1.2);
-    }
-
-    100% {
-      transform: scale(1);
-    }
-  }
-
   &__logo svg {
     width: 800px;
     height: 100px;
@@ -68,20 +54,6 @@
     &:active,
     &:focus {
       opacity: 0.4;
-    }
-  }
-
-  @keyframes buttonLoad {
-    0% {
-      transform: scale(1);
-    }
-
-    50% {
-      transform: scale(1.2);
-    }
-
-    100% {
-      transform: scale(1);
     }
   }
 
@@ -235,20 +207,6 @@
     @include viewport--md {
       animation-duration: $animation-duration;
       animation-name: openSite;
-    }
-  }
-
-  @keyframes openSite {
-    0% {
-      transform: translateX(-100%);
-    }
-
-    50% {
-      transform: translateX(20%);
-    }
-
-    100% {
-      transform: translateX(0);
     }
   }
 

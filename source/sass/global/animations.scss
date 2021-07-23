@@ -1,0 +1,55 @@
+@keyframes logoLoad {
+  0% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes buttonLoad {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes openSite {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(20%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes logoHeader {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

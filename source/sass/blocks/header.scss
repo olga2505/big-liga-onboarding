@@ -34,18 +34,4 @@
     animation-duration: $animation-duration;
     animation-name: logoHeader;
   }
-
-  @keyframes logoHeader {
-    0% {
-      transform: translateX(-100%);
-    }
-
-    50% {
-      transform: translateX(100%);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
-  }
 }
