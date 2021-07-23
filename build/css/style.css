@@ -668,61 +668,11 @@ button,
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
-  height: calc(100vh - 74px);
+  height: 100vh;
   margin: 0 auto;
   padding: 0;
   cursor: pointer;
   max-width: 1024px; }
-  .main__logo {
-    opacity: 0.5;
-    -webkit-transition: 1s ease;
-    transition: 1s ease; }
-  .main__logo--load {
-    opacity: 1;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-    -webkit-animation-name: logoLoad;
-            animation-name: logoLoad; }
-  .main__logo svg {
-    width: 800px;
-    height: 100px; }
-    @media (max-width: 1023px) {
-      .main__logo svg {
-        width: 550px;
-        height: 70px; } }
-  .main__button {
-    position: absolute;
-    bottom: 100px;
-    font-size: 24px;
-    line-height: 22px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    cursor: pointer;
-    -webkit-transition: 0.3s ease;
-    transition: 0.3s ease;
-    -webkit-animation-duration: 1.5s;
-            animation-duration: 1.5s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
-    -webkit-animation-name: buttonLoad;
-            animation-name: buttonLoad; }
-    .main__button:hover {
-      opacity: 0.6; }
-    .main__button:active, .main__button:focus {
-      opacity: 0.4; }
-  .main__button--tablet {
-    display: none; }
-    @media (max-width: 1023px) {
-      .main__button--tablet {
-        display: block; } }
-  @media (max-width: 1023px) {
-    .main__button--desktop {
-      display: none; } }
   .main__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -801,17 +751,12 @@ button,
     -webkit-transform: translate(0, 10%);
             transform: translate(0, 10%); }
 
-.load-close .main__button {
-  opacity: 0; }
-
-.load-close .main__logo {
-  opacity: 0; }
-
 .open-site .main {
-  padding: 0;
+  height: calc(100vh - 74px);
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  padding: 0;
   background-image: url("data:image/svg+xml,%3Csvg width='670' height='653' viewBox='0 0 670 653' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.02' d='M491.083 653.329L491.316 654H492.027H667H668.458L667.933 652.64L416.69 1.63995L416.443 1H415.757H335H254.243H253.558L253.311 1.6393L2.06732 651.3L1.54109 652.66H3H170.496H171.212L171.442 651.982L213.086 529.426H447.947L491.083 653.329ZM406.883 406.87H258.64L333.495 191.267L406.883 406.87Z' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: 50% 115px;
@@ -829,10 +774,6 @@ button,
 @media (max-width: 1023px) {
   .open-site .main__image-element {
     fill: #ffffff; } }
-
-.open-site .main__logo svg {
-  width: 192px;
-  height: 24px; }
 
 .open-site .main__content {
   opacity: 1;
@@ -870,6 +811,78 @@ button,
 @media (max-width: 1023px) {
   .open-description .main__description {
     left: 0; } }
+
+.loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .loader__logo {
+    opacity: 0.5;
+    -webkit-transition: 1s ease;
+    transition: 1s ease; }
+  .loader__logo--load {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-name: logoLoad;
+            animation-name: logoLoad; }
+  .loader__logo svg {
+    width: 800px;
+    height: 100px; }
+    @media (max-width: 1023px) {
+      .loader__logo svg {
+        width: 550px;
+        height: 70px; } }
+  .loader__button {
+    position: absolute;
+    bottom: 100px;
+    font-size: 24px;
+    line-height: 22px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+    -webkit-animation-name: buttonLoad;
+            animation-name: buttonLoad; }
+    .loader__button:hover {
+      opacity: 0.6; }
+    .loader__button:active, .loader__button:focus {
+      opacity: 0.4; }
+  .loader__button--tablet {
+    display: none; }
+    @media (max-width: 1023px) {
+      .loader__button--tablet {
+        display: block; } }
+  @media (max-width: 1023px) {
+    .loader__button--desktop {
+      display: none; } }
+
+.load-close .loader__button {
+  opacity: 0; }
+
+.load-close .loader__logo {
+  opacity: 0; }
+
+.open-site .loader__logo svg {
+  width: 192px;
+  height: 24px; }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,

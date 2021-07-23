@@ -1,16 +1,16 @@
-const animation = () => {
-  const logo = document.querySelector('.main__logo');
+const animations = () => {
+  const loaderLogo = document.querySelector('.loader__logo');
   const headerLogo = document.querySelector('.header__logo');
   const body = document.querySelector('body');
   const main = document.querySelector('.main');
   const LOAD_END = 1300;
   const SITE_START = 500;
 
-  if (!logo) {
+  if (!loaderLogo) {
     return;
   }
 
-  logo.classList.add('main__logo--load');
+  loaderLogo.classList.add('loader__logo--load');
 
   const openSite = () => {
     main.classList.add('load-close');
@@ -30,13 +30,11 @@ const animation = () => {
     window.addEventListener('keydown', onkeydown);
   }, LOAD_END);
 
-
   headerLogo.onclick = function (event) {
     event.stopPropagation();
   };
 
   body.onclick = function (event) {
-    // console.log(event.target);
     if (main.classList.contains('load-close')) {
       if (event.target !== headerLogo) {
         main.classList.toggle('open-description');
@@ -45,4 +43,4 @@ const animation = () => {
   };
 };
 
-export {animation};
+export {animations};

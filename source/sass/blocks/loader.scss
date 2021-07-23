@@ -1,0 +1,85 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__logo {
+    opacity: 0.5;
+    transition: $transition-animation;
+  }
+
+  &__logo--load {
+    opacity: 1;
+    transition: opacity $default-transition-settings;
+    animation-duration: $animation-duration;
+    animation-name: logoLoad;
+  }
+
+  &__logo svg {
+    width: 800px;
+    height: 100px;
+
+    @include viewport--md {
+      width: 550px;
+      height: 70px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 100px;
+    font-size: 24px;
+    line-height: 22px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: $default-transition-settings;
+    animation-duration: $animation-duration;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-name: buttonLoad;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.4;
+    }
+  }
+
+  &__button--tablet {
+    display: none;
+
+    @include viewport--md {
+      display: block;
+    }
+  }
+
+  &__button--desktop {
+    @include viewport--md {
+      display: none;
+    }
+  }
+}
+
+// Класс закрытия загрузочной страницы
+.load-close {
+  .loader__button {
+    opacity: 0;
+  }
+
+  .loader__logo {
+    opacity: 0;
+  }
+}
+
+// Клясс открытия основного контента
+.open-site {
+  .loader__logo svg {
+    width: 192px;
+    height: 24px;
+  }
+}
