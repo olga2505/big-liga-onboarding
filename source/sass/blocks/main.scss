@@ -1,0 +1,268 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 74px);
+  margin: 0 auto;
+  padding: 0;
+  cursor: pointer;
+  max-width: 1024px;
+
+  &__logo {
+    opacity: 0.5;
+    transition: $transition-animation;
+  }
+
+  &__logo--load {
+    opacity: 1;
+    transition: opacity $default-transition-settings;
+    animation-duration: $animation-duration;
+    animation-name: logoLoad;
+  }
+
+  @keyframes logoLoad {
+    0% {
+      transform: scale(0.5);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &__logo svg {
+    width: 800px;
+    height: 100px;
+
+    @include viewport--md {
+      width: 550px;
+      height: 70px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 100px;
+    font-size: 24px;
+    line-height: 22px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: $default-transition-settings;
+    animation-duration: $animation-duration;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-name: buttonLoad;
+
+    &:hover {
+      opacity: 0.6;
+    }
+
+    &:active,
+    &:focus {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes buttonLoad {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  &__button--tablet {
+    display: none;
+
+    @include viewport--md {
+      display: block;
+    }
+  }
+
+  &__button--desktop {
+    @include viewport--md {
+      display: none;
+    }
+  }
+
+  &__content {
+    display: flex;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    @include viewport--md {
+      width: 100%;
+      flex-grow: 1;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin: 58px 35px 0 0;
+    max-width: 570px;
+    font-size: 96px;
+    line-height: 96px;
+    font-weight: 400;
+    color: $color-neon-blue;
+
+    @include viewport--md {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    @include viewport--md {
+      order: -1;
+      position: fixed;
+      top: 74px;
+      left: -100%;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: $color-neon-blue;
+      display: flex;
+      align-items: center;
+      padding-bottom: 258px;
+      transition: $transition-animation;
+    }
+  }
+
+  &__description-wrap {
+    @include viewport--md {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 352px;
+      margin: 0 auto;
+    }
+  }
+
+  &__description-text {
+    margin: 0;
+    font-size: 30px;
+    line-height: 40px;
+
+    @include viewport--md {
+      color: $color-default-white;
+    }
+  }
+
+  &__description-img {
+    margin-bottom: 26px;
+  }
+
+  &__roar {
+    opacity: 0;
+    transition: 3s;
+    transform: translate(0, 10%);
+  }
+}
+
+// Класс закрытия загрузочной страницы
+.load-close {
+  .main__button {
+    opacity: 0;
+  }
+
+  .main__logo {
+    opacity: 0;
+  }
+}
+
+// Клясс открытия основного контента
+.open-site {
+  .main {
+    padding: 0;
+    justify-content: flex-start;
+    background-image: url("data:image/svg+xml,%3Csvg width='670' height='653' viewBox='0 0 670 653' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.02' d='M491.083 653.329L491.316 654H492.027H667H668.458L667.933 652.64L416.69 1.63995L416.443 1H415.757H335H254.243H253.558L253.311 1.6393L2.06732 651.3L1.54109 652.66H3H170.496H171.212L171.442 651.982L213.086 529.426H447.947L491.083 653.329ZM406.883 406.87H258.64L333.495 191.267L406.883 406.87Z' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 115px;
+    cursor: default;
+
+    @include viewport--md {
+      cursor: pointer;
+    }
+  }
+
+  @include viewport--md {
+    align-items: flex-start;
+  }
+
+  .main__image-element {
+    @include viewport--md {
+      fill: $color-default-white;
+    }
+  }
+
+  .main__logo svg {
+    width: 192px;
+    height: 24px;
+  }
+
+  .main__content {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    flex-grow: 1;
+    align-items: center;
+    padding-bottom: 189px;
+    animation-duration: $animation-duration;
+    animation-name: openSite;
+
+    @include viewport--md {
+      padding-bottom: 133px;
+      animation: none;
+    }
+  }
+
+  .main__title {
+    @include viewport--md {
+      animation-duration: $animation-duration;
+      animation-name: openSite;
+    }
+  }
+
+  @keyframes openSite {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(20%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .main__roar {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+// Класс открытия синего блока с описаним
+.open-description {
+  @include viewport--md {
+    .main__description {
+      left: 0;
+    }
+  }
+}

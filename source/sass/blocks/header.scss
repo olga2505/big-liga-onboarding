@@ -1,3 +1,51 @@
 .header {
   display: block;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include viewport--md {
+    cursor: pointer;
+  }
+
+  &__logo {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    @include viewport--md {
+      cursor: default;
+    }
+  }
+}
+
+.open-site {
+  .header__wrapper {
+    width: 100%;
+    height: 74px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header__logo {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    animation-duration: $animation-duration;
+    animation-name: logoHeader;
+  }
+
+  @keyframes logoHeader {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
 }
